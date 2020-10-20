@@ -63,7 +63,7 @@ module.exports = () => {
             type: 'list',
             name: 'condition',
             message: 'How would you like to search for Pokémon?',
-            choices: ['ID', 'Name', 'Generation'],
+            choices: ['ID', 'Name'],
         },
         {
             type: 'input',
@@ -76,12 +76,6 @@ module.exports = () => {
             name: 'id',
             message: 'Please enter the Pokémon ID:',
             when: (answers: any) => answers.condition === 'ID',
-        },
-        {
-            type: 'input',
-            name: 'generation',
-            message: 'Please enter the Pokémon Generation:',
-            when: (answers: any) => answers.condition === 'Generation',
         },
     ];
 
