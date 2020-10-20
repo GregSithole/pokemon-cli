@@ -60,22 +60,9 @@ function displayPokemon(result: any) {
 module.exports = () => {
     const questions = [
         {
-            type: 'list',
-            name: 'condition',
-            message: 'How would you like to search for Pokémon?',
-            choices: ['ID', 'Name'],
-        },
-        {
             type: 'input',
             name: 'name',
-            message: 'Please enter the Pokémon Name:',
-            when: (answers: any) => answers.condition === 'Name',
-        },
-        {
-            type: 'input',
-            name: 'id',
-            message: 'Please enter the Pokémon ID:',
-            when: (answers: any) => answers.condition === 'ID',
+            message: 'Please enter a Pokémon Name or ID:',
         },
     ];
 
