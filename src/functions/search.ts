@@ -57,18 +57,22 @@ function displayPokemon(result: any) {
     return displayedTable;
 }
 
-module.exports = () => {
-    const questions = [
-        {
-            type: 'input',
-            name: 'name',
-            message: 'Please enter a Pokémon Name or ID:',
-        },
-    ];
+module.exports = (name: string) => {
+    if (!name) {
+        const questions = [
+            {
+                type: 'input',
+                name: 'name',
+                message: 'Please enter a Pokémon Name or ID:',
+            },
+        ];
 
-    const prompt = inquirer.createPromptModule();
+        const prompt = inquirer.createPromptModule();
 
-    prompt(questions).then((answers: any) => {
-        runSearch(answers);
-    });
+        prompt(questions).then((answers: any) => {
+            runSearch(answers);
+        });
+    } else {
+        runSearch({ name: name });
+    }
 };
